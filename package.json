@@ -4,10 +4,10 @@
   "version": "0.4.0",
   "private": false,
   "author": "Rohan K Bhuri",
-  "license": "MIT",
+  "license": "MasterRace",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meanjs/mean.git"
+    "url": ""
   },
   "engines": {
     "node": ">=0.10.28",
