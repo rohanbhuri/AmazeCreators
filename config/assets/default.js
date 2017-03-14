@@ -5,7 +5,10 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation-flex.css'
+
       ],
       js: [
         'public/lib/angular/angular.js',

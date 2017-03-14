@@ -33,3 +33,9 @@ a:hover .header-profile-image {
   padding-top: 11px !important;
   padding-bottom: 11px !important;
 }
+.row.full-stretch {
+    max-width: 100%;
+}
+li {
+    list-style-type: none;
+}
