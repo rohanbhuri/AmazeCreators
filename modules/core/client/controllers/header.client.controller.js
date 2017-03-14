@@ -11,7 +11,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 
     // Toggle the menu items
     $scope.isCollapsed = false;
-    $scope.toggleCollapsibleMenu = function () {
+    $scope.toggleSmallMenu = function () {
       $scope.isCollapsed = !$scope.isCollapsed;
     };
 
