@@ -6,18 +6,19 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
-    // Get the topbar menu
+    
     $scope.menu = Menus.getMenu('topbar');
 
     // Toggle the menu items
     $scope.isCollapsed = false;
     $scope.toggleSmallMenu = function () {
-      $scope.isCollapsed = !$scope.isCollapsed;
+      $scope.OpenSmallMenu = !$scope.OpenSmallMenu;
     };
 
     // Collapsing the menu after navigation
     $scope.$on('$stateChangeSuccess', function () {
       $scope.isCollapsed = false;
+      $scope.dropdownsetting = false;
     });
   }
 ]);
