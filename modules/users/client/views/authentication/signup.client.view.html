@@ -1,21 +1,4 @@
 <style>
-.button-group {
-  position: relative;
-  display: inline-block;
-  margin: 1rem 0; }
-  .button-group:before {
-    content: attr(data-grouptype);
-    z-index: 99999;
-    color: #999;
-    display: block;
-    font-size: 1rem;
-    padding: 0.25em;
-    border-radius: 50%;
-    background: #fff;
-    position: absolute;
-    left: 42.5%;
-    top: 0.35rem; }
-
 </style>
 
 <div data-ng-controller="AuthenticationController">
@@ -48,18 +31,11 @@
             <input type="password" id="password" name="password" class=""
                 data-ng-model="credentials.password" placeholder="Password">
           </div>
-
-          <div class="button-group" data-grouptype="OR">
-            <button type="submit" class="small button primary radius">signup</button>
-            <button data-ui-sref="authentication.signin" class="show-signup small button success radius">signin</button>
-          </div>
-
-          <!--<div class="text-center">
+          <div class="text-center">
             <button type="submit" class="button">Sign up</button>
             &nbsp; or&nbsp;
             <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
-          </div>-->
-
+          </div>
           <div data-ng-show="error" class="text-center">
             <strong data-ng-bind="error"></strong>
           </div>

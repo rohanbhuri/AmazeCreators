@@ -4,11 +4,49 @@
     min-height: 4rem;
     position: relative;
     max-height: 4rem;
+    padding: 0rem 2rem;
 }
-.brand-img-link{
-  margin-left: 2rem;
+.brand-img-link {
+    margin-top: 1.3rem;
+    position: absolute;
+}
+.user-panal{
   margin-top: 1rem;
-  position: absolute;
+  position: relative;
+}
+ .button-group {
+    position: relative;
+    display: inline-block;
+    margin: .7rem 0; 
+}
+  .button-group:before {
+    content: attr(data-grouptype);
+    z-index: 99999;
+    color: #999;
+    display: block;
+    font-size: 1rem;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 37.5%;
+    top: 0.25rem;
+  }
+  .button-group .button {
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    border-radius: 5px;
+  }
+.small-menu-btn{
+  margin-top: .7rem;
+}
+.dropdown-setting {
+    position: absolute;
+    width: 13rem;
+    left: -4rem;
+    background-color: white;
+    border: 1px solid #c5c5c5;
+    padding: 1rem;
 }
 </style>
 <div class="header-wrap" data-ng-controller="HeaderController">
@@ -18,9 +56,9 @@
         <div class="columns small-6">
              <a data-ui-sref="home" class="brand-img-link"><img class="brand-img" src="">Masterrace</a>
         </div>
-        <div class="columns small-6">
+        <div class="columns small-6 float-right">
           <div class="show-for-small-only">
-            <button class="button" type="button" data-ng-click="toggleSmallMenu()">
+            <button class="button small-menu-btn float-right" type="button" data-ng-click="toggleSmallMenu()">
               <span class="">Toggle navigation</span>
             </button>
             <div ng-show="OpenSmallMenu == true">
@@ -32,22 +70,21 @@
 
 
           <div class="show-for-medium show-for-large">
-            <ul class="" data-ng-hide="authentication.user">
-              <li data-ui-sref-active="active">
-                <a data-ui-sref="authentication.signup">Sign Up</a>
-              </li>
-              <li class="divider-vertical"></li>
-              <li data-ui-sref-active="active">
-                <a data-ui-sref="authentication.signin">Sign In</a>
-              </li>
-            </ul>
-            <ul class="" data-ng-show="authentication.user">
+            <div class="signup-sign-panal float-right" data-ng-hide="authentication.user">
+              
+               <div class="button-group" data-grouptype="OR">
+                <button data-ui-sref="authentication.signin" class="sign-in-btn small button primary radius">signin</button>
+                <button data-ui-sref="authentication.signup" class="sign-up-btn small button success radius">signup</button>
+              </div>
+
+            </div>
+            <ul class="user-panal float-right" data-ng-show="authentication.user">
               <li class="">
                 <a class="" ng-click='dropdownsetting = !dropdownsetting;'>
                   <img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />
-                  <span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+                  <span data-ng-bind="authentication.user.displayName"></span> <b class="dropdown-icon">\/</b>
                 </a>
-                <ul class="dropdown-menu" ng-show="dropdownsetting == true">
+                <ul class="dropdown-setting" ng-show="dropdownsetting == true">
                   <li data-ui-sref-active="active">
                     <a data-ui-sref="settings.profile">Edit Profile</a>
                   </li>
