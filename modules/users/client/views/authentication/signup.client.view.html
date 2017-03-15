@@ -1,42 +1,69 @@
+<style>
+.button-group {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0; }
+  .button-group:before {
+    content: attr(data-grouptype);
+    z-index: 99999;
+    color: #999;
+    display: block;
+    font-size: 1rem;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 42.5%;
+    top: 0.35rem; }
+
+</style>
+
 <div data-ng-controller="AuthenticationController">
-  <h3 class="col-md-12 text-center">Or sign up using your email</h3>
-  <div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
-    <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-      <fieldset>
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" required id="firstName" name="firstName" class="form-control"
-               data-ng-model="credentials.firstName" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="form-control"
-               data-ng-model="credentials.lastName" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"
-               placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control"
-               data-ng-model="credentials.username" placeholder="Username">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control"
-               data-ng-model="credentials.password" placeholder="Password">
-        </div>
-        <div class="text-center form-group">
-          <button type="submit" class="btn btn-large btn-primary">Sign up</button>
-          &nbsp; or&nbsp;
-          <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
-        </div>
-        <div data-ng-show="error" class="text-center text-danger">
-          <strong data-ng-bind="error"></strong>
-        </div>
-      </fieldset>
-    </form>
+  <div class="row full-stretch">
+    <h3 class="small-12 text-center">Or sign up using your email</h3>
+    <div class="small-8">
+      <form name="userForm" data-ng-submit="signup()" class="" novalidate autocomplete="off">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" required id="firstName" name="firstName" class="form-control"
+                data-ng-model="credentials.firstName" placeholder="First Name">
+          </div>
+          <div class="">
+            <label>Last Name</label>
+            <input type="text" id="lastName" name="lastName" class=""
+                data-ng-model="credentials.lastName" placeholder="Last Name">
+          </div>
+          <div class="">
+            <label>Email</label>
+            <input type="email" id="email" name="email" class="" data-ng-model="credentials.email"
+                placeholder="Email">
+          </div>
+          <div class="">
+            <label>Username</label>
+            <input type="text" id="username" name="username" class=""
+                data-ng-model="credentials.username" placeholder="Username">
+          </div>
+          <div class="">
+            <label>Password</label>
+            <input type="password" id="password" name="password" class=""
+                data-ng-model="credentials.password" placeholder="Password">
+          </div>
+
+          <div class="button-group" data-grouptype="OR">
+            <button type="submit" class="small button primary radius">signup</button>
+            <button data-ui-sref="authentication.signin" class="show-signup small button success radius">signin</button>
+          </div>
+
+          <!--<div class="text-center">
+            <button type="submit" class="button">Sign up</button>
+            &nbsp; or&nbsp;
+            <a data-ui-sref="authentication.signin" class="show-signup">Sign in</a>
+          </div>-->
+
+          <div data-ng-show="error" class="text-center">
+            <strong data-ng-bind="error"></strong>
+          </div>
+      </form>
+    </div>
   </div>
 </div>

@@ -1,35 +1,33 @@
 <section>
-  <div class="page-header">
+  <div class="row full-stretch">
     <h1>User <span data-ng-bind="user.username"</span</h1>
   </div>
-  <div class="col-md-12">
-    <form name="userForm" class="form-horizontal" data-ng-submit="update()" novalidate>
-      <fieldset>
-        <div class="form-group">
-          <label class="control-label" for="firstName">First Name</label>
+  <div class="small-12">
+    <form name="userForm" class="" data-ng-submit="update()" novalidate>
+        <div class="">
+          <label class="">First Name</label>
           <div class="controls">
             <input name="firstName" type="text" data-ng-model="user.firstName" id="firstName" class="form-control" placeholder="First Name" required>
           </div>
         </div>
-        <div class="form-group">
+        <div class="">
           <label class="control-label" for="lastName">Last Name</label>
           <div class="controls">
             <input type="text" name="lastName" data-ng-model="user.lastName" id="lastName" class="form-control" placeholder="Last Name" />
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label" for="roles">Roles</label>
-          <div class="controls">
-            <input class="form-control" type="text" name="roles" data-ng-model="user.roles" id="roles" ng-list />
+        <div class="">
+          <label class="" for="roles">Roles</label>
+          <div class="">
+            <input class="" type="text" name="roles" data-ng-model="user.roles" id="roles" ng-list />
           </div>
         </div>
-        <div class="form-group">
-          <input type="submit" value="Update" class="btn btn-default">
+        <div class="">
+          <input type="submit" value="Update" class="">
         </div>
-        <div data-ng-show="error" class="text-danger">
+        <div data-ng-show="error" class="">
           <strong data-ng-bind="error"></strong>
         </div>
-      </fieldset>
     </form>
   </div>
 </section>
