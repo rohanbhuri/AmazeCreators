@@ -4,10 +4,10 @@ module.exports = {
   secure: true,
   port: process.env.PORT || 8443,
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/MasterRacePro',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || '@ds049476.mlab.com:49476') + '/amazecreators',
     options: {
-      user: '',
-      pass: ''
+      user: 'rohanbhuri',
+      pass: 'nokiaN97'
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false

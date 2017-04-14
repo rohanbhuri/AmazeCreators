@@ -1,10 +1,10 @@
 {
-  "name": "masterrace",
+  "name": "amazecreators",
   "description": "best aplication ever",
   "version": "0.4.0",
   "private": false,
   "author": "Rohan K Bhuri",
-  "license": "MasterRace",
+  "license": "amazecreators",
   "repository": {
     "type": "git",
     "url": ""
