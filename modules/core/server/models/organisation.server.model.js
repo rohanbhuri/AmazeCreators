@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * organisation Schema
+ * organisations Schema
  */
 var organisationSchema = new Schema({
   created: {
@@ -31,4 +31,4 @@ var organisationSchema = new Schema({
   }
 });
 
-mongoose.model('organisation', organisationSchema);
+mongoose.model('organisations', organisationSchema);

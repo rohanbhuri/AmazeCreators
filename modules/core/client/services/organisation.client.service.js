@@ -1,14 +1,17 @@
 'use strict';
 
-//organisations service used for communicating with the organisations REST endpoints
-angular.module('core').factory('Organisations', ['$resource',
-  function ($resource) {
-    return $resource('api/organisations/:organisationId', {
-      organisationId: '@_id'
-    }, {
-      update: {
-        method: 'PUT'
-      }
-    });
-  }
+
+
+angular.module('core').factory('OrganisationService', ['$resource',
+    function($resource) {
+
+        // console.log($resource);
+        return $resource('/api/v1/organisation/', {}, {
+            
+            // fetch_device_list:{method: 'POST' ,isArray: true ,url: '/api/v1/admin/sms/fetch_device_list'},
+            // send_message:{method: 'POST' ,url: '/api/v1/admin/sms/send_message'},            
+            
+
+        });
+    }
 ]);

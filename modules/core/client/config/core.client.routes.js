@@ -22,21 +22,9 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
           roles: ['user', 'admin']
         }
       })
-      .state('organisations.list', {
+      .state('organisations.page', {
         url: '',
-        templateUrl: 'modules/core/views/list-organisation.client.view.html'
-      })
-      .state('organisations.create', {
-        url: '/create',
-        templateUrl: 'modules/core/views/create-organisation.client.view.html'
-      })
-      .state('organisations.view', {
-        url: '/:organisationId',
-        templateUrl: 'modules/core/views/view-organisation.client.view.html'
-      })
-      .state('organisations.edit', {
-        url: '/:organisationId/edit',
-        templateUrl: 'modules/core/views/edit-organisation.client.view.html'
+        templateUrl: 'modules/core/views/organisation.client.view.html'
       })
 
       .state('not-found', {
