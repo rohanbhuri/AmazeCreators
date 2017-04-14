@@ -1,4 +1,4 @@
-<section data-ng-controller="organisationsController" data-ng-init="find()">
+<section data-ng-controller="organisationsController" data-ng-init="list()">
   <div class="row">
       <div class="colomns small-12">
     <h1 class="text-center">organisations</h1>
@@ -8,24 +8,37 @@
        <table>
   <thead>
     <tr>
-      <th width="200">Title</th>
-      <thwidth="400">Content</th>
-      <th width="150">update</th>
-      <th width="150">delete</th>
+      <th width="300"><input type="text"></input></th>
+      <th width="500"><textarea></textarea></th>
+      <th width="600"><a class="button expanded">Add organisation</a></th>
+    </tr>
+  </thead>
+</table>
+   </div>
+  </div>
+  <div class="row">
+   <div class="colomns small-12">
+       <table>
+  <thead>
+    <tr>
+      <th width="300">Title</th>
+      <th width="500">Content</th>
+      <th width="300">update</th>
+      <th width="300">delete</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="organisation in organisations">
-      <td>Content Goes Here</td>
       <td></td>
       <td></td>
-      <td></td>
+      <td><a class="button">edit</a></td>      
+      <td><a class="button">remove</a></td>
     </tr>
   </tbody>
 </table>
    </div>
   </div>
-  <div class="alert alert-warning text-center" data-ng-if="organisations.$resolved && !organisations.length">
+  <div class="alert alert-warning text-center" data-ng-if="!organisations.length">
     No organisations yet, why don't you <a data-ui-sref="organisations.create">create one</a>?
   </div>
 </section>
