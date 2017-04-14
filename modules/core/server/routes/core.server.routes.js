@@ -3,6 +3,8 @@
 module.exports = function (app) {
   // Root routing
   var core = require('../controllers/core.server.controller');
+  // organisationsPolicy = require('../policies/organisation.server.policy'),
+  // organisations = require('../controllers/organisation.server.controller');
 
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
@@ -12,4 +14,18 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
+
+
+  //  app.route('/api/organisations').all(organisationsPolicy.isAllowed)
+  //   .get(organisations.list)
+  //   .post(organisations.create);
+
+  // // Single organisation routes
+  // app.route('/api/organisations/:organisationId').all(organisationsPolicy.isAllowed)
+  //   .get(organisations.read)
+  //   .put(organisations.update)
+  //   .delete(organisations.delete);
+
+  // // Finish by binding the organisation middleware
+  // app.param('organisationId', organisations.organisationByID);
 };

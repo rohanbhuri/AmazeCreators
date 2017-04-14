@@ -1,14 +1,14 @@
 'use strict';
 
 // organisations controller
-angular.module('organisations').controller('organisationsController', ['$scope', '$stateParams', '$location', 'Authentication', 'organisations',
-  function ($scope, $stateParams, $location, Authentication, organisations) {
+angular.module('core').controller('organisationsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Organisations',
+  function ($scope, $stateParams, $location, Authentication, Organisations) {
     $scope.authentication = Authentication;
 
     // Create new organisation
     $scope.create = function () {
       // Create new organisation object
-      var organisation = new organisations({
+      var organisation = new Organisations({
         title: this.title,
         content: this.content
       });
@@ -55,12 +55,12 @@ angular.module('organisations').controller('organisationsController', ['$scope',
 
     // Find a list of organisations
     $scope.find = function () {
-      $scope.organisations = organisations.query();
+      $scope.organisations = Organisations.query();
     };
 
     // Find existing organisation
     $scope.findOne = function () {
-      $scope.organisation = organisations.get({
+      $scope.organisation = Organisations.get({
         organisationId: $stateParams.organisationId
       });
     };

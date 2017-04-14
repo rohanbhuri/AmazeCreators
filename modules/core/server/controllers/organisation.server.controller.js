@@ -12,7 +12,7 @@ var path = require('path'),
  * Create a organisation
  */
 exports.create = function (req, res) {
-  var organisation = new organisation(req.body);
+  var organisation = req.body;
   organisation.user = req.user;
 
   organisation.save(function (err) {
@@ -74,6 +74,7 @@ exports.delete = function (req, res) {
  * List of organisations
  */
 exports.list = function (req, res) {
+  console.log(req.body);
   organisation.find().sort('-created').populate('user', 'displayName').exec(function (err, organisations) {
     if (err) {
       return res.status(400).send({
