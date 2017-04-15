@@ -13,6 +13,8 @@ module.exports = {
       js: [
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js',
+        // 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.js',
         // 'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-ui-utils/ui-utils.js',

@@ -3,6 +3,7 @@
 module.exports = function (app) {
   // Root routing
   var core = require('../controllers/core.server.controller');
+
   // organisationsPolicy = require('../policies/organisation.server.policy'),
   // organisations = require('../controllers/organisation.server.controller');
 
@@ -14,6 +15,8 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
+
+ 
 
 
 };

@@ -3,10 +3,11 @@
 /**
  * Module dependencies.
  */
-var organisations = require('../controllers/organisation.server.controller');
+var organisations = require('../controllers/organisation.server.controller'),
+    organisationsPolicy = require('../policies/organisation.server.policy');
 
 module.exports = function (app) {
   // organisations collection routes
-  app.route('/api/organisations/list')
-      .post(organisations.create);
+   app.route('/organisation/organisations/list')
+        .get(organisations.list);
 };
