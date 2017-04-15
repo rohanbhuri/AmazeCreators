@@ -8,9 +8,10 @@
        <table>
   <thead>
     <tr>
-      <th width="300"><input type="text"></input></th>
-      <th width="500"><textarea></textarea></th>
-      <th width="600"><a class="button expanded">Add organisation</a></th>
+      <th width="300"><input type="text" data-ng-model="title"></input></th>
+      <th width="500"><textarea data-ng-model="content"></textarea></th>
+      <th width="300"><a class="button expanded">update organisation</a></th>
+      <th width="300"><a class="button expanded" data-ng-click="add(title,content)">Add organisation</a></th>      
     </tr>
   </thead>
 </table>
@@ -23,22 +24,22 @@
     <tr>
       <th width="300">Title</th>
       <th width="500">Content</th>
-      <th width="300">update</th>
+      <th width="300">edit</th>
       <th width="300">delete</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="organisation in organisations">
-      <td></td>
-      <td></td>
-      <td><a class="button">edit</a></td>      
-      <td><a class="button">remove</a></td>
+      <td>{{organisation.title}}</td>
+      <td>{{organisation.content}}</td>
+      <td><a class="button" ng-click="edit(organisation.title,organisation.content)">edit organisation</a></td>      
+      <td><a class="button">remove organisation</a></td>
     </tr>
   </tbody>
 </table>
    </div>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="!organisations.length">
-    No organisations yet, why don't you <a data-ui-sref="organisations.create">create one</a>?
+    No organisations yet, why don't you create one ?
   </div>
 </section>

@@ -5,15 +5,23 @@ angular.module('core').controller('organisationsController', ['$scope', '$stateP
   function ($scope, $stateParams, $location, Authentication, OrganisationService) {
     $scope.authentication = Authentication;
 
-
+    $scope.organisations=[];
 $scope.list = function(){
-   OrganisationService.list(function(response) {
+   OrganisationService.list_organisations(function(response) {
                   console.log(response);
-
+                  $scope.organisations=response;
                 });
 };
-
-
+$scope.edit = function(organisation_title,organisation_content){
+  $scope.title=organisation_title;
+  $scope.content=organisation_content;
+  // console.log($scope.title);
+};
+$scope.add = function(title,content){
+  console.log(title);
+  console.log(content);
+  
+};
 
 
 

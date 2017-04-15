@@ -8,7 +8,7 @@ var path = require('path'),
   organisations = mongoose.model('organisations'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
   
-  exports.list = function(req,res){
+  exports.list_organisations = function(req,res){
     console.log('aasasasa');
     organisations.find().exec(function(err,data){
         if (!err){
@@ -16,4 +16,13 @@ var path = require('path'),
         }
 
     });
+  };
+     exports.add_organisations = function(req,res){
+    console.log('aasasasa');
+    // organisations.find().exec(function(err,data){
+    //     if (!err){
+    //      res.json(data);
+    //     }
+
+    // });
   };
