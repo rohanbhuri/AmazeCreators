@@ -8,7 +8,7 @@ var path = require('path'),
   organisations = mongoose.model('organisations'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
   
-  exports.list = function(res,req){
+  exports.list = function(data){
     console.log('aasasasa');
     organisations.find().exec(function(err,res){
         if (!err){

@@ -8,7 +8,7 @@ angular.module('core').controller('organisationsController', ['$scope', '$stateP
 
 $scope.list = function(){
    OrganisationService.list(function(response) {
-                  
+                  console.log(response);
 
                 });
 };
