@@ -12,14 +12,26 @@ $scope.list = function(){
                   $scope.organisations=response;
                 });
 };
-$scope.edit = function(organisation_title,organisation_content){
+var organisaionId;
+$scope.edit = function(organisation_title,organisation_content,organisation_id){
   $scope.title=organisation_title;
   $scope.content=organisation_content;
-  // console.log($scope.title);
+  console.log(organisation_id);
+  organisaionId = organisation_id;
 };
 $scope.add = function(title,content){
   console.log(title);
   console.log(content);
+  OrganisationService.add_organisation({title:title,content:content},function(res){
+    console.log(res);
+  });
+    $scope.list();
+  
+};
+$scope.update = function(title,content){
+  console.log(title);
+  console.log(content);
+  console.log(organisaionId);
   
 };
 

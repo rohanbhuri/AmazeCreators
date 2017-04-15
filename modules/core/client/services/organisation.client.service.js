@@ -9,7 +9,7 @@ angular.module('core').factory('OrganisationService', ['$resource',
         return $resource('/core/organisations', {}, {
             
             list_organisations:{method: 'POST', isArray: true ,url: '/core/organisations/list_organisations'},
-            // send_message:{method: 'POST' ,url: '/api/v1/admin/sms/send_message'},            
+            add_organisation:{method: 'POST' ,url: '/core/organisations/add_organisation'},          
             
 
         });

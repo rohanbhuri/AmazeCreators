@@ -10,7 +10,7 @@
     <tr>
       <th width="300"><input type="text" data-ng-model="title"></input></th>
       <th width="500"><textarea data-ng-model="content"></textarea></th>
-      <th width="300"><a class="button expanded">update organisation</a></th>
+      <th width="300"><a class="button expanded"data-ng-click="update(title,content)">Update organisation</a></th>
       <th width="300"><a class="button expanded" data-ng-click="add(title,content)">Add organisation</a></th>      
     </tr>
   </thead>
@@ -32,8 +32,8 @@
     <tr ng-repeat="organisation in organisations">
       <td>{{organisation.title}}</td>
       <td>{{organisation.content}}</td>
-      <td><a class="button" ng-click="edit(organisation.title,organisation.content)">edit organisation</a></td>      
-      <td><a class="button">remove organisation</a></td>
+      <td><a class="button" ng-click="edit(organisation.title,organisation.content,organisation._id)">edit organisation</a></td>      
+      <td><a class="button" ng-click="remove(organisation.title,organisation.content,organisation._id)">remove organisation</a></td>
     </tr>
   </tbody>
 </table>
