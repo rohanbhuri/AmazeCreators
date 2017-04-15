@@ -9,5 +9,5 @@ var organisations = require('../controllers/organisation.server.controller');
 module.exports = function (app) {
   // organisations collection routes
    app.route('/core/organisations/list')
-        .get(organisations.list);
+        .post(organisations.list);
 };
