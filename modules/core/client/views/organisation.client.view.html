@@ -8,10 +8,10 @@
        <table>
   <thead>
     <tr>
-      <th width="300"><input type="text" data-ng-model="title"></input></th>
-      <th width="500"><textarea data-ng-model="content"></textarea></th>
-      <th width="300"><a class="button expanded"data-ng-click="update(title,content)">Update organisation</a></th>
-      <th width="300"><a class="button expanded" data-ng-click="add(title,content)">Add organisation</a></th>      
+      <th width="300"><input type="text" data-ng-model="title" placeholder="Organisation Title"></input></th>
+      <th width="500"><textarea data-ng-model="content" placeholder="Organisation Content"></textarea></th>
+      <th width="300"><a class="button expanded"data-ng-click="update(title,content)" data-ng-disabled="organisationId==undefined || title==undefind || content==undefind">Update {{organisationTitle}} organisation</a></th>
+      <th width="300"><a class="button expanded" data-ng-click="add(title,content)" data-ng-disabled="title==undefind || content==undefind">Add organisation</a></th>      
     </tr>
   </thead>
 </table>
@@ -33,13 +33,13 @@
       <td>{{organisation.title}}</td>
       <td>{{organisation.content}}</td>
       <td><a class="button" ng-click="edit(organisation.title,organisation.content,organisation._id)">edit organisation</a></td>      
-      <td><a class="button" ng-click="remove(organisation.title,organisation.content,organisation._id)">remove organisation</a></td>
+      <td><a class="button" ng-click="remove(organisation._id)">remove organisation</a></td>
     </tr>
   </tbody>
 </table>
    </div>
   </div>
-  <div class="alert alert-warning text-center" data-ng-if="!organisations.length">
+  <div class="text-center" data-ng-if="!organisations.length">
     No organisations yet, why don't you create one ?
   </div>
 </section>

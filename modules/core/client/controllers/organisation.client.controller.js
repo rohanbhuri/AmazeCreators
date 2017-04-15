@@ -4,20 +4,26 @@
 angular.module('core').controller('organisationsController', ['$scope', '$stateParams', '$location', 'Authentication', 'OrganisationService',
   function ($scope, $stateParams, $location, Authentication, OrganisationService) {
     $scope.authentication = Authentication;
+    $scope.organisationId;
+
+
 
     $scope.organisations=[];
 $scope.list = function(){
    OrganisationService.list_organisations(function(response) {
-                  console.log(response);
-                  $scope.organisations=response;
-                });
+      console.log(response);
+      console.log($scope.organisationId);      
+      $scope.organisations=response;
+    });
 };
-var organisaionId;
+
 $scope.edit = function(organisation_title,organisation_content,organisation_id){
   $scope.title=organisation_title;
   $scope.content=organisation_content;
   console.log(organisation_id);
-  organisaionId = organisation_id;
+  $scope.organisationId=organisation_id;
+  $scope.organisationTitle=organisation_title;
+  console.log($scope.organisationId);
 };
 $scope.add = function(title,content){
   console.log(title);
@@ -25,16 +31,28 @@ $scope.add = function(title,content){
   OrganisationService.add_organisation({title:title,content:content},function(res){
     console.log(res);
   });
+   $scope.title=undefined;
+  $scope.content=undefined;
     $scope.list();
   
 };
 $scope.update = function(title,content){
-  console.log(title);
-  console.log(content);
-  console.log(organisaionId);
-  
+  console.log($scope.organisationId);
+   OrganisationService.update_organisation({_id:$scope.organisationId,title:$scope.title,content:$scope.content},function(res){
+    console.log(res);
+  });
+  $scope.organisationId=undefined;
+  $scope.title=undefined;
+  $scope.content=undefined;
+  $scope.list();
 };
-
+$scope.remove = function(_id){
+  console.log(_id);
+   OrganisationService.remove_organisation({_id:_id},function(res){
+    console.log(res);
+  });
+  $scope.list();
+};
 
 
 

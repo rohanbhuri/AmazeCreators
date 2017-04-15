@@ -12,4 +12,8 @@ module.exports = function (app) {
         .post(organisations.list_organisations);
     app.route('/core/organisations/add_organisation')
         .post(organisations.add_organisation);
+    app.route('/core/organisations/remove_organisation')
+        .post(organisations.remove_organisation);
+         app.route('/core/organisations/update_organisation')
+        .post(organisations.update_organisation);
 };
