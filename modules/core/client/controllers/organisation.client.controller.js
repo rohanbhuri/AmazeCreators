@@ -9,10 +9,11 @@ angular.module('core').controller('organisationsController', ['$scope', '$stateP
 
 
     $scope.organisations=[];
-$scope.list = function(){
+
+
+  $scope.list = function(){
    OrganisationService.list_organisations(function(response) {
-      console.log(response);
-      console.log($scope.organisationId);      
+           
       $scope.organisations=response;
     });
 };
@@ -26,10 +27,9 @@ $scope.edit = function(organisation_title,organisation_content,organisation_id){
   console.log($scope.organisationId);
 };
 $scope.add = function(title,content){
-  console.log(title);
-  console.log(content);
+  
   OrganisationService.add_organisation({title:title,content:content},function(res){
-    console.log(res);
+    
   });
    $scope.title=undefined;
   $scope.content=undefined;
