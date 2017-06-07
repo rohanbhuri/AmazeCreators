@@ -34,7 +34,18 @@ var path = require('path'),
       }
     });
   };
+     
 
+
+
+
+
+
+
+
+
+
+     
    
   exports.remove_organisation = function(req,res){
     console.log(req.body._id);

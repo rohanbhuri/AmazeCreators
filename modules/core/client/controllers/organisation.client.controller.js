@@ -26,6 +26,13 @@ $scope.edit = function(organisation_title,organisation_content,organisation_id){
   $scope.organisationTitle=organisation_title;
   console.log($scope.organisationId);
 };
+
+
+
+
+
+
+
 $scope.add = function(title,content){
   
   OrganisationService.add_organisation({title:title,content:content},function(res){
