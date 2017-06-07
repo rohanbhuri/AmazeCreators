@@ -1,5 +1,5 @@
 'use strict';
-
+// new crazy feature
 // organisations controller
 angular.module('core').controller('organisationsController', ['$scope', '$stateParams', '$location', 'Authentication', 'OrganisationService',
   function ($scope, $stateParams, $location, Authentication, OrganisationService) {
